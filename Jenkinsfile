@@ -31,10 +31,7 @@ pipeline {
     stage('Build Docker Image') {
       steps {
         echo 'Build image from Dockerfile'
-        script {
-          sh '/opt/homebrew/bin/docker --version'
-        }
-
+        sh 'docker --version'
       }
     }
 
