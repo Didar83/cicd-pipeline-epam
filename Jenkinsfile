@@ -31,7 +31,7 @@ pipeline {
     stage('Docker Build') {
       steps {
         echo 'Build image with Dockerfile'
-        sh 'docker.build(\'didar83/cicd-pipeline\')'
+        sh 'docker build -t didar83/cicd-pipeline-epam .'
       }
     }
 
