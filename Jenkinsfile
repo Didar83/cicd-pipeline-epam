@@ -28,15 +28,5 @@ pipeline {
       }
     }
 
-    stage('Docker Build') {
-      steps {
-        echo 'Build image with Dockerfile'
-        script {
-          def app = docker.build('didar83/cicd-pipeline-epam:${env.BUILD_ID}')
-        }
-
-      }
-    }
-
   }
 }
