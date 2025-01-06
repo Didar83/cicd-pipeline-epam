@@ -32,7 +32,7 @@ pipeline {
       steps {
         echo 'Build image from Dockerfile'
         script {
-          sh 'docker --version'
+          sh '/opt/homebrew/bin/docker --version'
         }
 
       }
