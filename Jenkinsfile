@@ -30,14 +30,13 @@ pipeline {
 
     stage('Docker Build') {
       agent {
-        docker {
-          image 'node:lts'
-          args '-p 3001:3000'
+        dockerfile {
+          filename 'Dockerfile'
         }
 
       }
       steps {
-        echo 'Build image with Dockerfile '
+        echo 'Build image with Dockerfile'
         script {
           docker.build('didar83/cicd-pipeline-epam')
         }
