@@ -29,9 +29,25 @@ pipeline {
     }
 
     stage('Build Docker Image') {
+      agent {
+        dockerfile {
+          filename 'Dockerfile'
+        }
+
+      }
+      environment {
+        DOCKERHUB_ID = '123'
+      }
       steps {
         echo 'Build image from Dockerfile'
-        sh 'docker --version'
+        script {
+          docker.image('test123')
+        }
+
+        sh '''docker.withRegistry(\'\', env.DOCKERHUB_ID) { 
+   docker.image("didar83/cicd-pipeline").push("latest") 
+}
+'''
       }
     }
 
