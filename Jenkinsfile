@@ -9,7 +9,8 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        sh 'docker ps'
+        echo 'Check out scm '
+        sh 'sh "checkout scm"'
       }
     }
 
