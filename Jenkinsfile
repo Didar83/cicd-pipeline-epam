@@ -32,7 +32,7 @@ pipeline {
       steps {
         echo 'Build Docker image with Dockerfile'
         script {
-          docker.image 'didar83/cicd-pipeline-epam'
+          docker.build('didar83/cicd-pipeline')
         }
 
       }
@@ -41,8 +41,13 @@ pipeline {
     stage('Push Image to Docker Hub') {
       steps {
         echo 'Push Image to Docker Hub'
-      }
-    }
+        script {
+          docker.withRegistry('', 'docker_hub_id') {
+            docker.image("didar83/cicd-pipeline").push("latest") }
+          }
 
+        }
+      }
+
+    }
   }
-}
