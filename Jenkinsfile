@@ -29,12 +29,6 @@ pipeline {
     }
 
     stage('Docker Build') {
-      agent {
-        dockerfile {
-          filename 'Dockerfile'
-        }
-
-      }
       steps {
         echo 'Build image with Dockerfile'
         script {
