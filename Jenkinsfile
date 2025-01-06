@@ -28,5 +28,15 @@ pipeline {
       }
     }
 
+    stage('Docker Build') {
+      steps {
+        echo 'Build image with Dockerfile'
+        sh '''script {
+          docker.build(\'didar83/cicd-pipeline\')
+        }
+'''
+        }
+      }
+
+    }
   }
-}
