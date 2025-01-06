@@ -31,6 +31,9 @@ pipeline {
     stage('Build Docker Image') {
       steps {
         echo 'Build Docker image with Dockerfile'
+        script {
+           docker.build('didar83/cicd-pipeline-epam:${env.BUILD_ID}')
+        }
       }
     }
 
