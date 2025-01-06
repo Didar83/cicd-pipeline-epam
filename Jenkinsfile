@@ -38,5 +38,11 @@ pipeline {
       }
     }
 
+    stage('Push Image to Docker Hub') {
+      steps {
+        echo 'Push Image to Docker Hub'
+      }
+    }
+
   }
 }
