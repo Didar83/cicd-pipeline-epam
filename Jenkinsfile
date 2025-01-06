@@ -30,7 +30,7 @@ pipeline {
 
     stage('Docker Build') {
       steps {
-        echo 'Build image with Dockerfile'
+        echo 'Build image with Dockerfile2'
         script {
           def app = docker.build('didar83/cicd-pipeline-epam:${env.BUILD_ID}')
         }
