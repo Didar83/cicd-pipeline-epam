@@ -32,7 +32,7 @@ pipeline {
       steps {
         echo 'Build Docker image with Dockerfile'
         script {
-          docker.build 'didar83/cicd-pipeline-epam'
+          docker.image 'didar83/cicd-pipeline-epam'
         }
 
       }
