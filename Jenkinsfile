@@ -31,6 +31,10 @@ pipeline {
     stage('Build Docker Image') {
       steps {
         echo 'Build image from Dockerfile'
+        script {
+          sh 'docker --version'
+        }
+
       }
     }
 
